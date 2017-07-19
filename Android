@@ -1,0 +1,6 @@
+Android View
+View 的关键生命周期为
+[改变可见性]->构造View->onFinishInflate->onAttachedToWindow->onMeasure->onSizeChanged->onLayout->onDraw->onDetackedFromWindow
+其中由android:visibility不同，而略有不同
+
+参考：http://blog.csdn.net/sun_star1chen/article/details/44626433
