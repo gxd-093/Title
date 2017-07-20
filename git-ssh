@@ -15,3 +15,48 @@ fetch = ...
 remote = origin
 merge = refs/heads/maste
 
+多个ssh key
+#新建ssh key:
+cd ~/.ssh
+ssh-keygen -t rsa -C "typeX"
+save the key(~/.ssh/id_rsa): id_rsa_typeX
+#添加新密钥到ssh agent中，默认只读取id_rsa
+ssh-add ~/.ssh/id_rsa_typeX
+#如果 出现错误 your authentication agent,试以下命令
+ssh-agent bash
+ssh-add ~/.ssh/id_rsa_typeX
+#修改config文件
+touch config #在~/.ssh/目录下创建config文件
+#文件用于配置私钥对应的服务器
+#Default github user(first@mail.com)
+Host github.com
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa
+
+# second user(second@mail.com)
+# 建github别名，second user 使用这个别名做克隆和更新
+Host github2
+HostName github.com
+User git
+IdentityFile ~/.ssh/id_rsa_typeX
+#其规则从上至下读取config的内容，在每个Host下寻找对应的私钥
+#将github SSH仓库中的git@github.com替换成github2，即
+#git@github.com:user/title.git 对应 github2:user/title.git
+#添加id_rsa_typeX密钥到github后台
+#每个账户添加所有的*.pub到github后台
+#测试
+ssh -T git@github.com
+ssh -T github2
+
+git clone github2:defaultuser/xxx.git
+#用second账户克隆default账户下的xxx.git
+
+
+
+
+
+
+
+
+
