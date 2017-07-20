@@ -30,14 +30,14 @@ touch config #在~/.ssh/目录下创建config文件
 #文件用于配置私钥对应的服务器
 #Default github user(first@mail.com)
 Host github.com
-HostName github.com
+HostName github.com #感觉这个更好 HostName https://github.com
 User git
 IdentityFile ~/.ssh/id_rsa
 
 # second user(second@mail.com)
 # 建github别名，second user 使用这个别名做克隆和更新
 Host github2
-HostName github.com
+HostName github.com # HostName https://xxx.com
 User git
 IdentityFile ~/.ssh/id_rsa_typeX
 #其规则从上至下读取config的内容，在每个Host下寻找对应的私钥
