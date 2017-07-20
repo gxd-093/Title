@@ -1,0 +1,17 @@
+cd ~/.ssh
+
+git config --global user.name [username]
+git config --global user.email [email]
+
+git config --list
+
+.git/config 的编辑
+[core]
+...
+[remote "origin"]
+url = ...
+fetch = ...
+[branch "master"]
+remote = origin
+merge = refs/heads/maste
+
