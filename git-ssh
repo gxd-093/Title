@@ -52,6 +52,18 @@ ssh -T github2
 git clone github2:defaultuser/xxx.git
 #用second账户克隆default账户下的xxx.git
 
+1) 创建目录
+$ mkdir test
+$ cd test
+2) 初始化
+$ git init
+3) 创建hello.md文件
+$ echo "这是一次测试test ssh key" > hello.md
+4) 提交到本地
+5) 提交到github
+$ git remote add origin ‘粘贴复制test ssh key的ssh路径’  #git@github.com:user/xxx.git
+$ git push -u origin master
+
 
 
 
