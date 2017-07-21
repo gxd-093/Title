@@ -1,0 +1,18 @@
+Git项目的.git文件夹的config文件中看到相应设置
+$ git config user.name "hanzichi" //给自己起个用户名
+$ git config user.email  "abc@gmail.com" //填写自己的邮箱
+全局的
+$ git config --global user.name "hanzichi" //给自己起个用户名
+$ git config --global user.email  "abc@gmail.com" //填写自己的邮箱
+
+如果设置了 local config，则以 local 为先，如果没有，则取 global 配置
+修改具体项目的config
+url = git@github.com:FishLeong/test.git #修改前
+url = github2:FishLeong/test.git #修改后
+
+#多个git用户的设置
+清空~/.ssh/
+在默认用户的git目录下，生成密钥1 默认id_rsa
+在用户n的git目录下，生成密钥n id_rsa_n
+配置~/.ssh/config
+
